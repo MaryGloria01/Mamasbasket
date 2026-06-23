@@ -35,6 +35,46 @@ require __DIR__ . '/includes/header.php';
 <!-- ===================================================== HERO -->
 <section class="hero hero-photo">
     <div class="hero-main">
+        <!-- atmospheric street scene behind the real rider -->
+        <div class="hero-scene" aria-hidden="true">
+            <div class="hs-sky"></div>
+            <span class="hs-sun"></span>
+            <div class="hs-skyline">
+                <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax meet">
+                    <g fill="#9fb4c6">
+                        <rect x="20" y="120" width="70" height="180"/><rect x="100" y="70" width="48" height="230"/>
+                        <rect x="160" y="150" width="80" height="150"/><rect x="250" y="100" width="44" height="200"/>
+                        <rect x="305" y="60" width="56" height="240"/><rect x="372" y="140" width="74" height="160"/>
+                        <rect x="456" y="95" width="50" height="205"/><rect x="516" y="40" width="42" height="260"/>
+                        <rect x="568" y="130" width="80" height="170"/><rect x="658" y="90" width="48" height="210"/>
+                        <rect x="716" y="150" width="70" height="150"/><rect x="796" y="70" width="52" height="230"/>
+                        <rect x="858" y="120" width="74" height="180"/><rect x="942" y="55" width="46" height="245"/>
+                        <rect x="998" y="140" width="78" height="160"/><rect x="1086" y="100" width="50" height="200"/>
+                    </g>
+                    <g fill="#b6c7d5">
+                        <rect x="100" y="70" width="48" height="16"/><rect x="305" y="60" width="56" height="16"/>
+                        <rect x="516" y="40" width="42" height="16"/><rect x="942" y="55" width="46" height="16"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="hs-trees">
+                <svg viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax meet">
+                    <g fill="#5f8f57">
+                        <ellipse cx="80" cy="70" rx="58" ry="52"/><rect x="74" y="100" width="12" height="50" fill="#6b5135"/>
+                        <ellipse cx="180" cy="84" rx="46" ry="42"/><rect x="174" y="108" width="11" height="46" fill="#6b5135"/>
+                        <ellipse cx="300" cy="92" rx="40" ry="36"/><rect x="295" y="112" width="10" height="42" fill="#6b5135"/>
+                        <ellipse cx="1120" cy="78" rx="52" ry="46"/><rect x="1114" y="104" width="12" height="50" fill="#6b5135"/>
+                        <ellipse cx="1020" cy="92" rx="40" ry="36"/><rect x="1015" y="112" width="10" height="42" fill="#6b5135"/>
+                    </g>
+                    <g fill="#6fa065" opacity=".85">
+                        <ellipse cx="80" cy="60" rx="40" ry="36"/><ellipse cx="180" cy="74" rx="32" ry="28"/><ellipse cx="1120" cy="68" rx="36" ry="32"/>
+                    </g>
+                </svg>
+            </div>
+            <span class="hs-bike-shadow"></span>
+            <div class="hs-road"></div>
+        </div>
+
         <?php if ($heroVideo): ?>
             <video class="hero-rider" autoplay muted loop playsinline>
                 <source src="/assets/img/hero.mp4" type="video/mp4">

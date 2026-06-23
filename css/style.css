@@ -687,7 +687,26 @@ table.data tr:hover td { background: var(--cream-2); }
 @keyframes rider-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
 .hero-scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    background: linear-gradient(90deg, #fff 0%, #fff 33%, rgba(255,255,255,.86) 46%, rgba(255,255,255,0) 62%); }
+    background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 30%, rgba(255,255,255,.5) 48%, rgba(255,255,255,0) 64%); }
+
+/* Atmospheric street scene behind the rider */
+.hero-scene { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hs-sky { position: absolute; inset: 0; background: linear-gradient(180deg, #c2e2f0 0%, #d8ebef 36%, #ecf3ec 60%, #eef1e8 100%); }
+.hs-sun { position: absolute; top: 7%; right: 22%; width: 140px; height: 140px; border-radius: 50%;
+    background: radial-gradient(circle, #fff7e6, #ffe7ac 52%, rgba(255,231,172,0) 72%); filter: blur(3px); }
+.hs-skyline { position: absolute; left: 0; right: 0; bottom: 17%; height: 48%; }
+.hs-skyline svg { width: 100%; height: 100%; filter: blur(1.3px); opacity: .5; }
+.hs-trees { position: absolute; left: 0; right: 0; bottom: 14%; height: 24%; }
+.hs-trees svg { width: 100%; height: 100%; filter: blur(.4px); opacity: .92; }
+.hs-road { position: absolute; left: 0; right: 0; bottom: 0; height: 17%;
+    background: linear-gradient(180deg, #5c665f 0%, #474f49 70%, #3d443f 100%); }
+.hs-road::before { content: ""; position: absolute; top: 46%; left: 0; right: 0; height: 5px;
+    background: repeating-linear-gradient(90deg, rgba(243,201,105,.85) 0 44px, transparent 44px 92px); }
+.hs-bike-shadow { position: absolute; right: 4%; bottom: 14%; width: 50%; height: 6%;
+    background: radial-gradient(ellipse at center, rgba(8,18,10,.34), rgba(8,18,10,0) 70%); filter: blur(5px); z-index: 1; }
+
+/* rider sits on the road within the scene */
+.hero-photo .hero-rider { bottom: 13%; filter: drop-shadow(0 14px 16px rgba(8,20,12,.28)); }
 
 .hero-photo .container { position: relative; z-index: 3; }
 .hero-photo .hero-copy { max-width: 560px; }
