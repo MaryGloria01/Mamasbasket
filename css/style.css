@@ -692,9 +692,9 @@ table.data tr:hover td { background: var(--cream-2); }
 .hero-photo .container { position: relative; z-index: 3; }
 .hero-photo .hero-copy { max-width: 560px; }
 
-.hero-photo .float-card { z-index: 4; }
-.hero-photo .float-card.fc-track { top: 15%; right: 5%; animation: floaty 6s var(--ease) infinite; }
-.hero-photo .float-card.fc-fresh { bottom: 20%; right: 31%; animation: floaty 7s var(--ease) infinite .8s; }
+.hero-photo .float-card { z-index: 4; left: auto; right: auto; }
+.hero-photo .float-card.fc-track { top: 14%; right: 4%; left: auto; animation: floaty 6s var(--ease) infinite; }
+.hero-photo .float-card.fc-fresh { bottom: 8%; right: 5%; left: auto; animation: floaty 7s var(--ease) infinite .8s; }
 
 .hero-ecobar { position: relative; z-index: 3; background: var(--green-800); color: #fff; }
 .hero-ecobar .container { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding-block: 20px; }
