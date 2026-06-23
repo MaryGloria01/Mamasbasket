@@ -1,0 +1,2 @@
+# Block all direct web access to includes (config, db, helpers).
+Require all denied

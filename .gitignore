@@ -1,0 +1,21 @@
+# Sensitive config (DB credentials, MoMo details)
+/includes/config.php
+
+# Uploaded files (product images, payment receipts)
+/uploads/products/*
+/uploads/receipts/*
+!/uploads/products/.gitkeep
+!/uploads/receipts/.gitkeep
+
+# Claude / editor
+.claude/
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Logs
+*.log
