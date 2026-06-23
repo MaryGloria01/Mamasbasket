@@ -33,81 +33,71 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ===================================================== HERO -->
-<section class="hero">
-    <div class="container hero-grid">
-        <div class="hero-copy">
-            <span class="hero-badge"><?= icon('shield', 'icon', 18) ?> Premium shopping &amp; delivery service</span>
-            <h1 class="hero-title">
-                <span class="line"><span class="hl hl-ink">You Order.</span></span>
-                <span class="line"><span class="hl hl-green">We Shop. We Pack.</span></span>
-                <span class="line"><span class="hl hl-orange">We Deliver.<svg class="hl-stroke" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 70 4, 150 4, 296 9"/></svg></span></span>
-            </h1>
-            <p class="hero-sub">Groceries, meals, drinks, medicines and more. Shopped or picked up, then delivered fast across Kigali while you relax.</p>
-            <div class="hero-cta">
-                <a href="/shop.php" class="btn btn-green btn-lg"><?= icon('basket', 'icon', 20) ?> Start Shopping</a>
-                <a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="btn btn-ghost btn-lg" target="_blank" rel="noopener"><?= icon('whatsapp', 'icon', 20) ?> Order on WhatsApp</a>
-            </div>
+<section class="hero hero-photo">
+    <div class="hero-main">
+        <?php if ($heroVideo): ?>
+            <video class="hero-rider" autoplay muted loop playsinline>
+                <source src="/assets/img/hero.mp4" type="video/mp4">
+                <?php if (file_exists(__DIR__ . '/assets/img/hero.webm')): ?><source src="/assets/img/hero.webm" type="video/webm"><?php endif; ?>
+            </video>
+        <?php elseif ($heroImg): ?>
+            <img class="hero-rider" src="<?= e(asset($heroImg)) ?>" alt="Mama's Basket delivery rider on a Spiro electric motorbike">
+        <?php endif; ?>
+        <span class="hero-scrim"></span>
 
-            <div class="hero-pills">
-                <div class="hpill"><span class="hpi"><?= icon('clock', 'icon', 20) ?></span><span><b>Under 15 minutes</b><span>Fast delivery</span></span></div>
-                <div class="hpill"><span class="hpi"><?= icon('shield', 'icon', 20) ?></span><span><b>100% Reliable</b><span>Safe and on time</span></span></div>
-                <div class="hpill"><span class="hpi"><?= icon('basket', 'icon', 20) ?></span><span><b>Anything you need</b><span>Food and essentials</span></span></div>
-                <div class="hpill"><span class="hpi"><?= icon('headset', 'icon', 20) ?></span><span><b>7 days support</b><span>Always here</span></span></div>
-            </div>
-
-            <div class="hero-trust">
-                <div class="avatars">
-                    <?php foreach (['A','E','C','N'] as $i => $ltr): ?>
-                    <span class="av" style="--i:<?= $i ?>"><?= $ltr ?></span>
-                    <?php endforeach; ?>
+        <div class="container">
+            <div class="hero-copy">
+                <span class="hero-badge"><?= icon('shield', 'icon', 18) ?> Premium shopping &amp; delivery service</span>
+                <h1 class="hero-title">
+                    <span class="line"><span class="hl hl-ink">You Order.</span></span>
+                    <span class="line"><span class="hl hl-green">We Shop. We Pack.</span></span>
+                    <span class="line"><span class="hl hl-orange">We Deliver.<svg class="hl-stroke" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 70 4, 150 4, 296 9"/></svg></span></span>
+                </h1>
+                <p class="hero-sub">Groceries, meals, drinks, medicines and more. Shopped or picked up, then delivered fast across Kigali while you relax.</p>
+                <div class="hero-cta">
+                    <a href="/shop.php" class="btn btn-green btn-lg"><?= icon('basket', 'icon', 20) ?> Start Shopping</a>
+                    <a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="btn btn-ghost btn-lg" target="_blank" rel="noopener"><?= icon('whatsapp', 'icon', 20) ?> Order on WhatsApp</a>
                 </div>
-                <div class="trust-meta">
-                    <div class="stars"><?= str_repeat(icon('star', 'icon', 16), 5) ?></div>
-                    <span><b data-count="4.8">0</b> rating from <b data-count="2500" data-suffix="+">0</b> happy customers</span>
+
+                <div class="hero-pills">
+                    <div class="hpill"><span class="hpi"><?= icon('clock', 'icon', 20) ?></span><span><b>Under 15 minutes</b><span>Fast delivery</span></span></div>
+                    <div class="hpill"><span class="hpi"><?= icon('shield', 'icon', 20) ?></span><span><b>100% Reliable</b><span>Safe and on time</span></span></div>
+                    <div class="hpill"><span class="hpi"><?= icon('basket', 'icon', 20) ?></span><span><b>Anything you need</b><span>Food and essentials</span></span></div>
+                    <div class="hpill"><span class="hpi"><?= icon('headset', 'icon', 20) ?></span><span><b>7 days support</b><span>Always here</span></span></div>
+                </div>
+
+                <div class="hero-trust">
+                    <div class="avatars">
+                        <?php foreach (['A','E','C','N'] as $i => $ltr): ?>
+                        <span class="av" style="--i:<?= $i ?>"><?= $ltr ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="trust-meta">
+                        <div class="stars"><?= str_repeat(icon('star', 'icon', 16), 5) ?></div>
+                        <span><b data-count="4.8">0</b> rating from <b data-count="2500" data-suffix="+">0</b> happy customers</span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Hero media: real Spiro photo or looping video clip -->
-        <div class="hero-stage">
-            <div class="hero-media<?= $heroImg ? ' kenburns' : '' ?>">
-                <?php if ($heroVideo): ?>
-                    <video autoplay muted loop playsinline poster="<?= $heroImg ? e(asset($heroImg)) : '' ?>">
-                        <source src="/assets/img/hero.mp4" type="video/mp4">
-                        <?php if (file_exists(__DIR__ . '/assets/img/hero.webm')): ?><source src="/assets/img/hero.webm" type="video/webm"><?php endif; ?>
-                    </video>
-                <?php elseif ($heroImg): ?>
-                    <img src="<?= e(asset($heroImg)) ?>" alt="Mama's Basket delivery rider on a Spiro electric motorbike">
-                <?php else: ?>
-                    <div class="ph-scene">
-                        <div>
-                            <span class="brand-mark"><?= icon('basket', 'icon', 50) ?></span>
-                            <b>Add your delivery photo or video</b>
-                            <span>Drop hero.mp4 or hero-rider.jpg into /assets/img/</span>
-                        </div>
-                    </div>
-                <?php endif; ?>
-            </div>
-
-            <!-- floating overlays -->
-            <div class="float-card fc-track">
-                <span class="dot" style="background:linear-gradient(150deg,var(--green-600),var(--green-800))"><?= icon('truck', 'icon', 20) ?></span>
-                <span><span class="t">Your order is on the way</span><span class="s">Arriving in under 15 min</span></span>
-            </div>
-            <div class="float-card fc-fresh">
-                <span class="dot" style="background:linear-gradient(150deg,var(--gold),var(--orange))"><?= icon('leaf', 'icon', 20) ?></span>
-                <span><span class="t">Fresh &amp; quality</span><span class="s">Hand picked for you</span></span>
-            </div>
+        <!-- floating status chips over the rider -->
+        <div class="float-card fc-track">
+            <span class="dot" style="background:linear-gradient(150deg,var(--green-600),var(--green-800))"><?= icon('truck', 'icon', 20) ?></span>
+            <span><span class="t">Your order is on the way</span><span class="s">Arriving in under 15 min</span></span>
+        </div>
+        <div class="float-card fc-fresh">
+            <span class="dot" style="background:linear-gradient(150deg,var(--gold),var(--orange))"><?= icon('leaf', 'icon', 20) ?></span>
+            <span><span class="t">Fresh &amp; quality</span><span class="s">Hand picked for you</span></span>
         </div>
     </div>
-</section>
 
-<!-- ===================================================== TRUST BAR -->
-<section class="trustbar">
-    <div class="container">
-        <div class="trust-item"><?= icon('truck') ?><div><b>Local riders</b><span>Kigali based and trusted</span></div></div>
-        <div class="trust-item"><?= icon('pin') ?><div><b>Across Kigali</b><span>Delivering to all neighbourhoods</span></div></div>
-        <div class="trust-item"><?= icon('leaf') ?><div><b>Eco friendly</b><span>100% electric, zero emissions</span></div></div>
+    <!-- bottom eco bar -->
+    <div class="hero-ecobar">
+        <div class="container">
+            <div class="trust-item"><?= icon('truck') ?><div><b>Local riders</b><span>Kigali based and trusted</span></div></div>
+            <div class="trust-item"><?= icon('pin') ?><div><b>Across Kigali</b><span>Delivering to all neighbourhoods</span></div></div>
+            <div class="trust-item"><?= icon('leaf') ?><div><b>Eco friendly</b><span>100% electric, zero emissions</span></div></div>
+        </div>
     </div>
 </section>
 
