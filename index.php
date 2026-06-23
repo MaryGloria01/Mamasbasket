@@ -21,6 +21,14 @@ try {
     $featured = $stmt->fetchAll();
 } catch (Throwable $e) { /* show static fallback below */ }
 
+/* Hero media: prefer a looping video clip, else a photo, else a placeholder.
+   Drop the file into /assets/img/ and it appears automatically. */
+$heroVideo = file_exists(__DIR__ . '/assets/img/hero.mp4');
+$heroImg = null;
+foreach (['hero-rider.jpg', 'hero-rider.jpeg', 'hero-rider.png', 'hero-rider.webp'] as $f) {
+    if (file_exists(__DIR__ . '/assets/img/' . $f)) { $heroImg = 'assets/img/' . $f; break; }
+}
+
 require __DIR__ . '/includes/header.php';
 ?>
 
@@ -29,10 +37,10 @@ require __DIR__ . '/includes/header.php';
     <div class="container hero-grid">
         <div class="hero-copy">
             <span class="hero-badge"><?= icon('shield', 'icon', 18) ?> Premium shopping &amp; delivery service</span>
-            <h1>
-                <span class="l1">You Order.</span><br>
-                <span class="l2">We Shop. We Pack.</span><br>
-                <span class="l3">We Deliver.</span>
+            <h1 class="hero-title">
+                <span class="line"><span class="hl hl-ink">You Order.</span></span>
+                <span class="line"><span class="hl hl-green">We Shop. We Pack.</span></span>
+                <span class="line"><span class="hl hl-orange">We Deliver.<svg class="hl-stroke" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C 70 4, 150 4, 296 9"/></svg></span></span>
             </h1>
             <p class="hero-sub">Groceries, meals, drinks, medicines and more. Shopped or picked up, then delivered fast across Kigali while you relax.</p>
             <div class="hero-cta">
@@ -60,123 +68,25 @@ require __DIR__ . '/includes/header.php';
             </div>
         </div>
 
-        <!-- Animated delivery scene -->
+        <!-- Hero media: real Spiro photo or looping video clip -->
         <div class="hero-stage">
-            <div class="scene" aria-hidden="true">
-                <!-- sky + sun -->
-                <span class="sun"></span>
-                <!-- drifting clouds -->
-                <span class="cloud cloud-1"></span>
-                <span class="cloud cloud-2"></span>
-                <!-- parallax skyline -->
-                <div class="skyline">
-                    <svg viewBox="0 0 600 160" preserveAspectRatio="none" width="1200" height="160">
-                        <g fill="#cfe0cf">
-                            <rect x="10" y="70" width="46" height="90"/><rect x="66" y="40" width="34" height="120"/>
-                            <rect x="110" y="86" width="54" height="74"/><rect x="174" y="56" width="30" height="104"/>
-                            <rect x="214" y="96" width="48" height="64"/><rect x="272" y="30" width="38" height="130"/>
-                            <rect x="320" y="74" width="44" height="86"/><rect x="374" y="52" width="32" height="108"/>
-                            <rect x="416" y="92" width="52" height="68"/><rect x="478" y="44" width="34" height="116"/>
-                            <rect x="522" y="80" width="46" height="80"/>
-                        </g>
-                        <g fill="#bcd6bd">
-                            <rect x="10" y="70" width="46" height="14"/><rect x="66" y="40" width="34" height="14"/>
-                            <rect x="272" y="30" width="38" height="14"/><rect x="478" y="44" width="34" height="14"/>
-                        </g>
-                    </svg>
-                    <svg viewBox="0 0 600 160" preserveAspectRatio="none" width="1200" height="160">
-                        <g fill="#cfe0cf">
-                            <rect x="10" y="70" width="46" height="90"/><rect x="66" y="40" width="34" height="120"/>
-                            <rect x="110" y="86" width="54" height="74"/><rect x="174" y="56" width="30" height="104"/>
-                            <rect x="214" y="96" width="48" height="64"/><rect x="272" y="30" width="38" height="130"/>
-                            <rect x="320" y="74" width="44" height="86"/><rect x="374" y="52" width="32" height="108"/>
-                            <rect x="416" y="92" width="52" height="68"/><rect x="478" y="44" width="34" height="116"/>
-                            <rect x="522" y="80" width="46" height="80"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <!-- motion streaks -->
-                <span class="streak s1"></span><span class="streak s2"></span><span class="streak s3"></span>
-
-                <!-- the rider + scooter -->
-                <svg class="bike" viewBox="0 0 560 360" width="560" height="360" role="img" aria-label="Mama's Basket delivery rider">
-                    <defs>
-                        <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#2e7d32"/><stop offset="1" stop-color="#13491b"/>
-                        </linearGradient>
-                        <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#f0b454"/><stop offset="1" stop-color="#e0760f"/>
-                        </linearGradient>
-                    </defs>
-
-                    <ellipse class="bike-shadow" cx="290" cy="320" rx="210" ry="16" fill="#0c3a17"/>
-
-                    <g class="bike-bob">
-                        <!-- rear delivery box -->
-                        <g>
-                            <rect x="120" y="120" width="120" height="100" rx="14" fill="url(#gGreen)"/>
-                            <rect x="120" y="120" width="120" height="26" rx="13" fill="#256b29"/>
-                            <rect x="138" y="150" width="84" height="58" rx="10" fill="#f7f3e9"/>
-                            <g transform="translate(155,160) scale(2.1)" fill="none" stroke="#1b5e20" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M2 5h12l-1 7H3z"/><path d="M5 5 8 1l3 4"/>
-                            </g>
-                        </g>
-
-                        <!-- frame + deck -->
-                        <path d="M150 250 L150 250" />
-                        <rect x="235" y="250" width="140" height="16" rx="8" fill="#15361d"/>
-                        <path d="M360 256 L384 150 L410 150 L398 256 Z" fill="url(#gGreen)"/>
-                        <rect x="232" y="186" width="78" height="18" rx="9" fill="#11321a"/>
-                        <path d="M150 220 q-6 24 14 34 l60 0 0 -34 z" fill="url(#gGreen)"/>
-
-                        <!-- handlebar + headlight -->
-                        <rect x="392" y="120" width="10" height="40" rx="5" fill="#15361d"/>
-                        <rect x="396" y="116" width="52" height="9" rx="4.5" fill="#15361d"/>
-                        <circle cx="430" cy="166" r="12" fill="url(#gGold)"/>
-                        <path class="beam" d="M442 160 L520 144 L520 188 L442 172 Z" fill="#ffd98a"/>
-
-                        <!-- rider -->
-                        <g>
-                            <path d="M300 130 q12 -2 22 6 l78 18 -6 20 -84 -16 q-18 -4 -22 -22 z" fill="url(#gGreen)"/>
-                            <path d="M300 132 q-16 8 -14 36 l6 40 26 -2 -6 -40 q-2 -22 6 -30 z" fill="#256b29"/>
-                            <path d="M312 206 l-2 30 -26 16 -6 -12 22 -16 2 -20 z" fill="#11321a"/>
-                            <rect x="276" y="244" width="34" height="14" rx="6" fill="#0c2614"/>
-                            <path d="M392 150 q14 6 30 -2 l6 12 q-22 12 -42 2 z" fill="#256b29"/>
-                            <circle cx="300" cy="96" r="28" fill="url(#gGreen)"/>
-                            <path d="M300 68 a28 28 0 0 1 26 18 l-52 0 a28 28 0 0 1 26 -18 z" fill="#34953b"/>
-                            <path d="M322 92 a26 24 0 0 1 -2 22 l-26 -4 q-6 -14 6 -22 z" fill="#0e2c17"/>
-                            <rect x="294" y="120" width="14" height="12" rx="4" fill="#e9b98c"/>
-                        </g>
-
-                        <!-- wheels -->
-                        <g class="wheel">
-                            <circle cx="165" cy="262" r="50" fill="#1d2622"/>
-                            <circle cx="165" cy="262" r="50" fill="none" stroke="#0f1612" stroke-width="6"/>
-                            <circle cx="165" cy="262" r="38" fill="#e9ede9"/>
-                            <g class="spokes">
-                                <line x1="165" y1="226" x2="165" y2="298" stroke="#9aa69c" stroke-width="4"/>
-                                <line x1="134" y1="244" x2="196" y2="280" stroke="#9aa69c" stroke-width="4"/>
-                                <line x1="196" y1="244" x2="134" y2="280" stroke="#9aa69c" stroke-width="4"/>
-                            </g>
-                            <circle cx="165" cy="262" r="9" fill="#2e7d32"/>
-                        </g>
-                        <g class="wheel">
-                            <circle cx="415" cy="262" r="50" fill="#1d2622"/>
-                            <circle cx="415" cy="262" r="50" fill="none" stroke="#0f1612" stroke-width="6"/>
-                            <circle cx="415" cy="262" r="38" fill="#e9ede9"/>
-                            <g class="spokes">
-                                <line x1="415" y1="226" x2="415" y2="298" stroke="#9aa69c" stroke-width="4"/>
-                                <line x1="384" y1="244" x2="446" y2="280" stroke="#9aa69c" stroke-width="4"/>
-                                <line x1="446" y1="244" x2="384" y2="280" stroke="#9aa69c" stroke-width="4"/>
-                            </g>
-                            <circle cx="415" cy="262" r="9" fill="#2e7d32"/>
-                        </g>
-                    </g>
-                </svg>
-
-                <!-- moving road -->
-                <div class="road"><span class="lane"></span></div>
+            <div class="hero-media<?= $heroImg ? ' kenburns' : '' ?>">
+                <?php if ($heroVideo): ?>
+                    <video autoplay muted loop playsinline poster="<?= $heroImg ? e(asset($heroImg)) : '' ?>">
+                        <source src="/assets/img/hero.mp4" type="video/mp4">
+                        <?php if (file_exists(__DIR__ . '/assets/img/hero.webm')): ?><source src="/assets/img/hero.webm" type="video/webm"><?php endif; ?>
+                    </video>
+                <?php elseif ($heroImg): ?>
+                    <img src="<?= e(asset($heroImg)) ?>" alt="Mama's Basket delivery rider on a Spiro electric motorbike">
+                <?php else: ?>
+                    <div class="ph-scene">
+                        <div>
+                            <span class="brand-mark"><?= icon('basket', 'icon', 50) ?></span>
+                            <b>Add your delivery photo or video</b>
+                            <span>Drop hero.mp4 or hero-rider.jpg into /assets/img/</span>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- floating overlays -->
