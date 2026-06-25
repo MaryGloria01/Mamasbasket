@@ -25,7 +25,7 @@ try {
    Drop the file into /assets/img/ and it appears automatically. */
 $heroVideo = file_exists(__DIR__ . '/assets/img/hero.mp4');
 $heroImg = null;
-foreach (['hero-rider.jpg', 'hero-rider.jpeg', 'hero-rider.png', 'hero-rider.webp'] as $f) {
+foreach (['hero-rider.svg', 'hero-rider.png', 'hero-rider.webp', 'hero-rider.jpg', 'hero-rider.jpeg'] as $f) {
     if (file_exists(__DIR__ . '/assets/img/' . $f)) { $heroImg = 'assets/img/' . $f; break; }
 }
 

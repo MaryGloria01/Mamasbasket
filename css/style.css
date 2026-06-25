@@ -692,11 +692,14 @@ table.data tr:hover td { background: var(--cream-2); }
 /* Real city-street background photo */
 .hero-bg { position: absolute; inset: 0; z-index: 0;
     background: url("/assets/img/hero-bg.png") center bottom / cover no-repeat; }
-.hs-bike-shadow { position: absolute; right: 5%; bottom: 15%; width: 48%; height: 5%;
+.hs-bike-shadow { position: absolute; left: 0; right: 0; margin-inline: auto; bottom: 14%; width: 60%; height: 5%;
     background: radial-gradient(ellipse at center, rgba(8,18,10,.42), rgba(8,18,10,0) 70%); filter: blur(6px); z-index: 1; }
 
-/* rider sits on the road within the photo */
-.hero-photo .hero-rider { bottom: 14%; filter: drop-shadow(0 16px 18px rgba(8,20,12,.32)); }
+/* rider sits on the road, centred and large */
+.hero-photo .hero-rider { left: 50%; right: auto; transform: translateX(-50%); margin: 0;
+    width: auto; height: 92%; max-width: none; bottom: 10%;
+    object-position: center bottom; animation: none;
+    filter: drop-shadow(0 16px 18px rgba(8,20,12,.32)); }
 
 .hero-photo .container { position: relative; z-index: 3; }
 .hero-photo .hero-copy { max-width: 560px; }
