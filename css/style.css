@@ -720,6 +720,10 @@ table.data tr:hover td { background: var(--cream-2); }
 .hero-photo .container { position: relative; z-index: 3; }
 .hero-photo .hero-copy { max-width: 560px; }
 
+/* secondary hero button needs a clearly visible outline over the photo */
+.hero-cta .btn-ghost { border-width: 2px; border-color: var(--green-700); background: rgba(255,255,255,.9); color: var(--green-800); }
+.hero-cta .btn-ghost:hover { border-color: var(--green-800); background: #fff; }
+
 .hero-photo .float-card { z-index: 4; left: auto; right: auto; }
 .hero-photo .float-card.fc-track { top: 14%; right: var(--gutter); left: auto; animation: floaty 6s var(--ease) infinite; }
 .hero-photo .float-card.fc-fresh { bottom: 8%; right: calc(var(--gutter) + 3%); left: auto; animation: floaty 7s var(--ease) infinite .8s; }
