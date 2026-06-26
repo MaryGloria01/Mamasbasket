@@ -694,19 +694,19 @@ table.data tr:hover td { background: var(--cream-2); }
 @keyframes rider-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
 .hero-scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    background: linear-gradient(90deg, rgba(255,255,255,.80) 0%, rgba(255,255,255,.5) 26%, rgba(255,255,255,.12) 44%, rgba(255,255,255,0) 56%); }
+    background: linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.95) 36%, rgba(255,255,255,.7) 47%, rgba(255,255,255,.2) 56%, rgba(255,255,255,0) 64%); }
 
 /* Real city-street background photo */
 .hero-bg { position: absolute; inset: 0; z-index: 0;
     background: url("/assets/img/hero-bg.png") center bottom / cover no-repeat; }
 /* contact shadow sits right under the wheels on the tarmac */
-.hs-bike-shadow { position: absolute; right: calc(var(--gutter) + 3%); bottom: 5%; width: 34%; max-width: 480px; height: 3.5%;
+.hs-bike-shadow { position: absolute; right: calc(var(--gutter) * 0.4 + 2%); bottom: 5%; width: 32%; max-width: 460px; height: 3.5%;
     background: radial-gradient(ellipse at center, rgba(8,18,10,.5), rgba(8,18,10,0) 70%); filter: blur(7px); z-index: 1; }
 
-/* rider aligned to the centred content container; pushed down so the tyres meet the road.
-   The SVG has ~10% empty padding below the wheels, so a small negative bottom grounds it. */
-.hero-photo .hero-rider { left: auto; right: var(--gutter); transform: none; margin: 0;
-    width: auto; height: 90%; max-width: 760px; bottom: -2%;
+/* rider shifted right of the content container so it clears the cards, and pushed down
+   so the tyres meet the road (the SVG has ~10% empty padding below the wheels). */
+.hero-photo .hero-rider { left: auto; right: calc(var(--gutter) * 0.4); transform: none; margin: 0;
+    width: auto; height: 84%; max-width: 700px; bottom: -2.5%;
     object-position: center bottom; animation: none;
     filter: drop-shadow(0 10px 12px rgba(8,20,12,.3)); }
 
