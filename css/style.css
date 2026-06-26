@@ -694,19 +694,21 @@ table.data tr:hover td { background: var(--cream-2); }
 @keyframes rider-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
 .hero-scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
-    background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 30%, rgba(255,255,255,.5) 48%, rgba(255,255,255,0) 64%); }
+    background: linear-gradient(90deg, rgba(255,255,255,.80) 0%, rgba(255,255,255,.5) 26%, rgba(255,255,255,.12) 44%, rgba(255,255,255,0) 56%); }
 
 /* Real city-street background photo */
 .hero-bg { position: absolute; inset: 0; z-index: 0;
     background: url("/assets/img/hero-bg.png") center bottom / cover no-repeat; }
-.hs-bike-shadow { position: absolute; right: calc(var(--gutter) + 1%); bottom: 13%; width: 40%; max-width: 560px; height: 5%;
-    background: radial-gradient(ellipse at center, rgba(8,18,10,.42), rgba(8,18,10,0) 70%); filter: blur(6px); z-index: 1; }
+/* contact shadow sits right under the wheels on the tarmac */
+.hs-bike-shadow { position: absolute; right: calc(var(--gutter) + 3%); bottom: 5%; width: 34%; max-width: 480px; height: 3.5%;
+    background: radial-gradient(ellipse at center, rgba(8,18,10,.5), rgba(8,18,10,0) 70%); filter: blur(7px); z-index: 1; }
 
-/* rider sits on the road, aligned to the centred content container */
+/* rider aligned to the centred content container; pushed down so the tyres meet the road.
+   The SVG has ~10% empty padding below the wheels, so a small negative bottom grounds it. */
 .hero-photo .hero-rider { left: auto; right: var(--gutter); transform: none; margin: 0;
-    width: auto; height: 84%; max-width: 720px; bottom: 13%;
+    width: auto; height: 90%; max-width: 760px; bottom: -2%;
     object-position: center bottom; animation: none;
-    filter: drop-shadow(0 16px 18px rgba(8,20,12,.32)); }
+    filter: drop-shadow(0 10px 12px rgba(8,20,12,.3)); }
 
 .hero-photo .container { position: relative; z-index: 3; }
 .hero-photo .hero-copy { max-width: 560px; }
