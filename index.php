@@ -63,13 +63,6 @@ require __DIR__ . '/includes/header.php';
                     <a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="btn btn-ghost btn-lg" target="_blank" rel="noopener"><?= icon('whatsapp', 'icon', 20) ?> Order on WhatsApp</a>
                 </div>
 
-                <div class="hero-pills">
-                    <div class="hpill"><span class="hpi"><?= icon('clock', 'icon', 20) ?></span><span><b>Under 15 minutes</b><span>Fast delivery</span></span></div>
-                    <div class="hpill"><span class="hpi"><?= icon('shield', 'icon', 20) ?></span><span><b>100% Reliable</b><span>Safe and on time</span></span></div>
-                    <div class="hpill"><span class="hpi"><?= icon('basket', 'icon', 20) ?></span><span><b>Anything you need</b><span>Food and essentials</span></span></div>
-                    <div class="hpill"><span class="hpi"><?= icon('headset', 'icon', 20) ?></span><span><b>7 days support</b><span>Always here</span></span></div>
-                </div>
-
                 <div class="hero-trust">
                     <div class="avatars">
                         <?php foreach (['A','E','C','N'] as $i => $ltr): ?>
