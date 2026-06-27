@@ -4,7 +4,7 @@
             <div>
                 <a href="/index.php" class="brand">
                     <span class="brand-mark"><?= icon('basket') ?></span>
-                    <span class="brand-name" style="color:#fff">Mama's <span>Basket</span></span>
+                    <span class="brand-name light"><span class="ms">Mama's</span><span class="bk">Basket</span></span>
                 </a>
                 <p>You Order, We Shop, We Pack, We Deliver. Fresh groceries, meals, drinks and everyday essentials delivered fast across Kigali.</p>
             </div>

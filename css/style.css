@@ -143,8 +143,12 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
     display: grid; place-items: center; color: var(--cream); box-shadow: var(--shadow-sm);
 }
 .brand-mark .icon { width: 26px; height: 26px; }
-.brand-name { font-family: var(--font-head); font-weight: 800; font-size: 1.18rem; line-height: 1; color: var(--green-900); letter-spacing: -.02em; }
-.brand-name span { color: var(--orange); }
+.brand-name { display: inline-flex; align-items: baseline; gap: 6px; line-height: 1; }
+.brand-name .ms { font-family: 'Pacifico', cursive; font-weight: 400; font-size: 1.32rem; color: var(--green-800); }
+.brand-name .bk { font-family: var(--font-head); font-weight: 800; font-size: 1.02rem; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+/* light wordmark on dark backgrounds (footer, dashboards, auth side) */
+.brand-name.light .ms { color: #fff; }
+.brand-name.light .bk { color: var(--gold); }
 .brand-tag { font-size: .68rem; color: var(--muted); letter-spacing: .02em; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; margin-inline: auto; }

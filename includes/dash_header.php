@@ -19,7 +19,7 @@ $dashLogout = $dashLogout ?? '#';
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -27,7 +27,7 @@ $dashLogout = $dashLogout ?? '#';
     <aside class="dash-side">
         <div class="dash-brand">
             <span class="brand-mark"><?= icon('basket', 'icon', 24) ?></span>
-            <span class="brand-name" style="color:#fff">Mama's <span style="color:var(--orange)">Basket</span></span>
+            <span class="brand-name light"><span class="ms">Mama's</span><span class="bk">Basket</span></span>
         </div>
         <?php foreach ($dashLinks as $l): ?>
         <a href="<?= e($l[0]) ?>" class="<?= $dashActive === ($l[3] ?? $l[1]) ? 'active' : '' ?>">
