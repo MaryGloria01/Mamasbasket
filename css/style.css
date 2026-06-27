@@ -149,11 +149,22 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 
 .nav-links { display: flex; align-items: center; gap: 4px; margin-inline: auto; }
 .nav-links a {
+    position: relative;
     padding: 10px 16px; border-radius: var(--radius-pill);
     font-weight: 600; font-size: .96rem; color: var(--ink-2);
-    transition: color .2s, background .2s;
+    transition: color .2s, background .2s, transform .2s var(--ease);
 }
-.nav-links a:hover, .nav-links a.active { color: var(--green-800); background: var(--green-050); }
+/* animated underline indicator */
+.nav-links a::after {
+    content: ""; position: absolute; left: 16px; right: 16px; bottom: 5px; height: 2.5px;
+    background: var(--orange); border-radius: 2px; transform: scaleX(0); transform-origin: left;
+    transition: transform .28s var(--ease);
+}
+.nav-links a:hover { color: var(--green-800); background: var(--green-050); transform: translateY(-1px); }
+.nav-links a:hover::after { transform: scaleX(1); }
+/* active page: bold filled pill */
+.nav-links a.active { color: #fff; background: var(--green-700); box-shadow: 0 6px 16px rgba(27,94,32,.3); }
+.nav-links a.active::after { display: none; }
 
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 
