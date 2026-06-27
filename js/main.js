@@ -117,4 +117,36 @@
         btn.classList.add("added");
         setTimeout(function () { btn.classList.remove("added"); }, 900);
     }
+
+    /* ---- Scroll spy: highlight nav links for in-page sections (Why Us, Reviews) ---- */
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
+    if (navLinks.length) {
+        var spy = [];
+        navLinks.forEach(function (a) {
+            var href = a.getAttribute("href") || "";
+            var h = href.indexOf("#");
+            if (h >= 0) {
+                var sec = document.getElementById(href.slice(h + 1));
+                if (sec) spy.push({ link: a, sec: sec });
+            }
+        });
+        if (spy.length) {
+            spy.sort(function (x, y) { return x.sec.offsetTop - y.sec.offsetTop; });
+            var homeLink = document.querySelector('.nav-links a[href="/index.php"], .nav-links a[href="/"]');
+            var spyEls = spy.map(function (s) { return s.link; });
+
+            function spyUpdate() {
+                var pos = window.scrollY + window.innerHeight * 0.4;
+                var current = null;
+                spy.forEach(function (s) { if (s.sec.offsetTop <= pos) current = s.link; });
+                var target = current || homeLink;
+                navLinks.forEach(function (a) {
+                    if (a === target) a.classList.add("active");
+                    else if (a === homeLink || spyEls.indexOf(a) >= 0) a.classList.remove("active");
+                });
+            }
+            window.addEventListener("scroll", spyUpdate, { passive: true });
+            spyUpdate();
+        }
+    }
 })();
