@@ -21,7 +21,7 @@ $sidePerks = $sidePerks ?? [];
 <div class="auth-wrap">
     <aside class="auth-side">
         <a href="/index.php" class="brand">
-            <img src="/assets/img/logo.png" alt="Mama's Basket" class="brand-logo brand-logo-lg">
+            <img src="<?= e(brand_logo_src()) ?>" alt="Mama's Basket" class="brand-logo brand-logo-lg">
         </a>
         <div>
             <h2><?= e($sideTitle) ?></h2>

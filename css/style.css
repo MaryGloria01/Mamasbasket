@@ -39,7 +39,7 @@
     --radius-pill: 999px;
 
     --container: 1240px;
-    --nav-h: 76px;
+    --nav-h: 90px;
 
     --ease: cubic-bezier(.22, 1, .36, 1);
 
@@ -151,8 +151,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 .brand-name.light .bk { color: var(--gold); }
 
 /* actual brand logo image */
-.brand-logo { height: 56px; width: auto; display: block; border-radius: 12px; }
-.brand-logo-lg { height: 76px; border-radius: 14px; }
+.brand-logo { height: 74px; width: auto; display: block; }
+.brand-logo-lg { height: 112px; }
 .brand-tag { font-size: .68rem; color: var(--muted); letter-spacing: .02em; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; margin-inline: auto; }

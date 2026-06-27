@@ -39,6 +39,14 @@ function asset(string $path): string
     return '/' . ltrim($path, '/');
 }
 
+/** Brand logo URL: prefer the crisp SVG if present, else the PNG. */
+function brand_logo_src(): string
+{
+    return is_file(dirname(__DIR__) . '/assets/img/logo.svg')
+        ? '/assets/img/logo.svg'
+        : '/assets/img/logo.png';
+}
+
 /* --------------------------------------------------------------------------
  * Session cart (no localStorage anywhere; cart lives server-side)
  * Structure: $_SESSION['cart'] = [ productId => qty, ... ]
