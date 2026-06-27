@@ -149,6 +149,10 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 /* light wordmark on dark backgrounds (footer, dashboards, auth side) */
 .brand-name.light .ms { color: #fff; }
 .brand-name.light .bk { color: var(--gold); }
+
+/* actual brand logo image */
+.brand-logo { height: 56px; width: auto; display: block; border-radius: 12px; }
+.brand-logo-lg { height: 76px; border-radius: 14px; }
 .brand-tag { font-size: .68rem; color: var(--muted); letter-spacing: .02em; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; margin-inline: auto; }
