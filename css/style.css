@@ -803,3 +803,40 @@ table.data tr:hover td { background: var(--cream-2); }
     .hero-pills { grid-template-columns: 1fr; }
     .hero-cta .btn { flex: 1 1 auto; }
 }
+
+/* ==========================================================================
+   Compact card sizing for the home sections
+   ========================================================================== */
+.steps { gap: 16px; }
+.step { padding: 20px 18px; border-radius: var(--radius-sm); }
+.step-ico { width: 44px; height: 44px; border-radius: 12px; margin-bottom: 12px; }
+.step-ico .icon { width: 22px; height: 22px; }
+.step h3 { font-size: 1.02rem; margin-bottom: 5px; }
+.step p { font-size: .85rem; }
+.step-no { font-size: 1.2rem; top: 14px; right: 16px; }
+
+.cat-grid { gap: 14px; }
+.cat-card { padding: 12px 14px; gap: 11px; border-radius: var(--radius-sm); }
+.cat-card .ci { width: 40px; height: 40px; border-radius: 11px; }
+.cat-card .ci .icon { width: 21px; height: 21px; }
+.cat-card b { font-size: .9rem; }
+.cat-card span { font-size: .76rem; }
+
+.product-grid { gap: 16px; }
+.product-thumb { aspect-ratio: 16 / 11; }
+.product-thumb .ph .icon { width: 40px; height: 40px; }
+.product-body { padding: 12px 12px 14px; gap: 4px; }
+.product-vendor { font-size: .7rem; }
+.product-name { font-size: .92rem; }
+.product-price { font-size: 1rem; }
+.product-price small { font-size: .66rem; }
+.product-foot { padding-top: 8px; }
+.add-btn { width: 36px; height: 36px; border-radius: 10px; }
+.add-btn .icon { width: 18px; height: 18px; }
+
+.why-grid { gap: 16px; }
+.why-card { padding: 18px; }
+.why-card .wi { width: 42px; height: 42px; border-radius: 12px; margin-bottom: 11px; }
+.why-card .wi .icon { width: 22px; height: 22px; }
+.why-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.why-card p { font-size: .86rem; }
