@@ -313,7 +313,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 
 /* ----------------------------------------------------------- CTA band */
 .cta-band { background: linear-gradient(135deg, var(--green-700), var(--green-900)); border-radius: var(--radius-lg);
-    padding: 56px; text-align: center; color: #fff; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
+    padding: 56px; text-align: center; color: #fff; position: relative; overflow: hidden; }
 .cta-band::before { content: ""; position: absolute; inset: -40% auto auto -10%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(232,163,61,.3), transparent 65%); }
 .cta-band h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 12px; position: relative; }
 .cta-band p { color: rgba(255,255,255,.82); margin-bottom: 26px; position: relative; }
@@ -334,8 +334,8 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 /* ----------------------------------------------------------- WhatsApp float */
 .wa-float { position: fixed; bottom: 26px; right: 170px; z-index: 90; width: 54px; height: 54px;
     display: grid; place-items: center; border-radius: 50%; background: #1faa55; color: #fff;
-    box-shadow: 0 10px 26px rgba(31,170,85,.45); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
-.wa-float:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 16px 32px rgba(31,170,85,.55); }
+    transition: transform .25s var(--ease); }
+.wa-float:hover { transform: translateY(-3px) scale(1.06); }
 .wa-float .icon { width: 28px; height: 28px; }
 
 /* ----------------------------------------------------------- Forms */
