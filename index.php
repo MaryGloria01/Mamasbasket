@@ -137,8 +137,13 @@ require __DIR__ . '/includes/header.php';
     </div>
 </section>
 
+<!-- section divider -->
+<div class="container">
+    <div class="sec-divider"><span></span><?= icon('leaf', 'icon', 20) ?><span></span></div>
+</div>
+
 <!-- ===================================================== FEATURED PRODUCTS -->
-<section class="section" style="background:var(--cream-2)">
+<section class="section" style="background:var(--cream-2);padding-top:48px">
     <div class="container">
         <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none">
             <div>
