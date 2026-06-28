@@ -314,7 +314,6 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 /* ----------------------------------------------------------- CTA band */
 .cta-band { background: linear-gradient(135deg, var(--green-700), var(--green-900)); border-radius: var(--radius-lg);
     padding: 56px; text-align: center; color: #fff; position: relative; overflow: hidden; }
-.cta-band::before { content: ""; position: absolute; inset: -40% auto auto -10%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(232,163,61,.3), transparent 65%); }
 .cta-band h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 12px; position: relative; }
 .cta-band p { color: rgba(255,255,255,.82); margin-bottom: 26px; position: relative; }
 .cta-band .hero-cta { justify-content: center; position: relative; }
