@@ -26,7 +26,13 @@ $dashLogout = $dashLogout ?? '#';
 <div class="dash">
     <aside class="dash-side">
         <div class="dash-brand">
-            <img src="<?= e(brand_logo_src()) ?>" alt="Mama's Basket" class="brand-logo">
+            <a href="/index.php" class="brand on-dark">
+                <span class="brand-ico"><?= icon('basket', 'icon', 44) ?></span>
+                <span class="brand-text">
+                    <span class="brand-name"><span class="ms">Mama's</span><span class="bk">Basket</span></span>
+                    <span class="brand-tag">We Shop. We Pack. We Deliver.</span>
+                </span>
+            </a>
         </div>
         <?php foreach ($dashLinks as $l): ?>
         <a href="<?= e($l[0]) ?>" class="<?= $dashActive === ($l[3] ?? $l[1]) ? 'active' : '' ?>">

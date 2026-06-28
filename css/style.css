@@ -136,24 +136,29 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 .nav.scrolled { background: rgba(255, 255, 255, .9); border-color: var(--line-2); box-shadow: var(--shadow-sm); }
 .nav .container { display: flex; align-items: center; gap: 24px; }
 
+/* Horizontal brand lockup: mark on the left, name + tagline stacked on the right */
 .brand { display: flex; align-items: center; gap: 12px; }
+.brand-ico { flex: none; display: flex; color: var(--green-700); }
+.brand-ico .icon { width: 56px; height: 56px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.04; }
+.brand-name { display: inline-flex; align-items: baseline; gap: 6px; }
+.brand-name .ms { font-family: 'Pacifico', cursive; font-weight: 400; font-size: 1.6rem; color: var(--green-800); }
+.brand-name .bk { font-family: var(--font-head); font-weight: 800; font-size: 1rem; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); }
+.brand-tag { font-style: italic; font-size: .72rem; color: var(--muted); letter-spacing: .01em; margin-top: 4px; }
+
+/* on dark backgrounds (footer, dashboards, auth side) */
+.brand.on-dark .brand-ico { color: var(--gold); }
+.brand.on-dark .brand-name .ms { color: #fff; }
+.brand.on-dark .brand-name .bk { color: var(--gold); }
+.brand.on-dark .brand-tag { color: rgba(255,255,255,.7); }
+
+/* green badge mark, used in empty states / placeholders */
 .brand-mark {
     width: 44px; height: 44px; border-radius: 13px;
     background: linear-gradient(150deg, var(--green-600), var(--green-800));
-    display: grid; place-items: center; color: var(--cream); box-shadow: var(--shadow-sm);
+    display: grid; place-items: center; color: #fff; box-shadow: var(--shadow-sm);
 }
 .brand-mark .icon { width: 26px; height: 26px; }
-.brand-name { display: inline-flex; align-items: baseline; gap: 6px; line-height: 1; }
-.brand-name .ms { font-family: 'Pacifico', cursive; font-weight: 400; font-size: 1.32rem; color: var(--green-800); }
-.brand-name .bk { font-family: var(--font-head); font-weight: 800; font-size: 1.02rem; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
-/* light wordmark on dark backgrounds (footer, dashboards, auth side) */
-.brand-name.light .ms { color: #fff; }
-.brand-name.light .bk { color: var(--gold); }
-
-/* actual brand logo image */
-.brand-logo { height: 74px; width: auto; display: block; }
-.brand-logo-lg { height: 112px; }
-.brand-tag { font-size: .68rem; color: var(--muted); letter-spacing: .02em; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; margin-inline: auto; }
 .nav-links a {

@@ -2,8 +2,12 @@
     <div class="container">
         <div class="footer-grid">
             <div>
-                <a href="/index.php" class="brand">
-                    <img src="<?= e(brand_logo_src()) ?>" alt="Mama's Basket" class="brand-logo brand-logo-lg">
+                <a href="/index.php" class="brand on-dark">
+                    <span class="brand-ico"><?= icon('basket', 'icon', 54) ?></span>
+                    <span class="brand-text">
+                        <span class="brand-name"><span class="ms">Mama's</span><span class="bk">Basket</span></span>
+                        <span class="brand-tag">We Shop. We Pack. We Deliver.</span>
+                    </span>
                 </a>
                 <p>You Order, We Shop, We Pack, We Deliver. Fresh groceries, meals, drinks and everyday essentials delivered fast across Kigali.</p>
             </div>

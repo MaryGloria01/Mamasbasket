@@ -28,7 +28,11 @@ $active    = $active ?? '';
 <header class="nav" id="nav">
     <div class="container">
         <a href="/index.php" class="brand" aria-label="Mama's Basket home">
-            <img src="<?= e(brand_logo_src()) ?>" alt="Mama's Basket" class="brand-logo">
+            <span class="brand-ico"><?= icon('basket', 'icon', 56) ?></span>
+            <span class="brand-text">
+                <span class="brand-name"><span class="ms">Mama's</span><span class="bk">Basket</span></span>
+                <span class="brand-tag">We Shop. We Pack. We Deliver.</span>
+            </span>
         </a>
 
         <nav class="nav-links" id="navLinks">
