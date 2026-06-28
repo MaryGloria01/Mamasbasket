@@ -76,16 +76,6 @@ require __DIR__ . '/includes/header.php';
                 </div>
             </div>
         </div>
-
-        <!-- floating status chips over the rider -->
-        <div class="float-card fc-track">
-            <span class="dot" style="background:linear-gradient(150deg,var(--green-600),var(--green-800))"><?= icon('truck', 'icon', 20) ?></span>
-            <span><span class="t">Your order is on the way</span><span class="s">Arriving in under 15 min</span></span>
-        </div>
-        <div class="float-card fc-fresh">
-            <span class="dot" style="background:linear-gradient(150deg,var(--gold),var(--orange))"><?= icon('leaf', 'icon', 20) ?></span>
-            <span><span class="t">Fresh &amp; quality</span><span class="s">Hand picked for you</span></span>
-        </div>
     </div>
 
     <!-- bottom eco bar -->
