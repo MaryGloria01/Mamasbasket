@@ -840,3 +840,7 @@ table.data tr:hover td { background: var(--cream-2); }
 .why-card .wi .icon { width: 22px; height: 22px; }
 .why-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .why-card p { font-size: .86rem; }
+
+/* smaller CTA band buttons */
+.cta-band .hero-cta .btn { padding: 11px 22px; font-size: .92rem; }
+.cta-band .hero-cta .btn .icon { width: 18px; height: 18px; }
