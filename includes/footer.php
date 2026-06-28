@@ -45,8 +45,8 @@
     </div>
 </footer>
 
-<a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="wa-float" target="_blank" rel="noopener">
-    <?= icon('whatsapp', 'icon', 24) ?><span class="lbl">Order on WhatsApp</span>
+<a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="wa-float" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+    <?= icon('whatsapp', 'icon', 28) ?>
 </a>
 
 <script src="/js/main.js" defer></script>

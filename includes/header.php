@@ -48,9 +48,6 @@ $active    = $active ?? '';
                 <?= icon('cart', 'icon', 22) ?>
                 <span class="cart-badge" id="cartBadge"><?= cart_count() ?></span>
             </a>
-            <a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="btn btn-green btn-sm" target="_blank" rel="noopener">
-                <?= icon('whatsapp', 'icon', 20) ?><span class="label-hide">Order on WhatsApp</span>
-            </a>
             <button class="nav-toggle" id="navToggle" aria-label="Menu"><?= icon('menu') ?></button>
         </div>
     </div>
