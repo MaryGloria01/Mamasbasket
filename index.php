@@ -116,8 +116,13 @@ require __DIR__ . '/includes/header.php';
     </div>
 </section>
 
+<!-- section divider -->
+<div class="container">
+    <div class="sec-divider"><span></span><?= icon('leaf', 'icon', 20) ?><span></span></div>
+</div>
+
 <!-- ===================================================== CATEGORIES -->
-<section class="section" id="categories">
+<section class="section" id="categories" style="padding-top:40px">
     <div class="container">
         <div class="section-head reveal">
             <span class="eyebrow">Browse</span>
@@ -137,13 +142,13 @@ require __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- section divider -->
+<!-- bold section divider -->
 <div class="container">
-    <div class="sec-divider"><span></span><?= icon('leaf', 'icon', 20) ?><span></span></div>
+    <div class="sec-divider sec-divider-bold"><span></span><i class="dv-badge"><?= icon('basket', 'icon', 24) ?></i><span></span></div>
 </div>
 
 <!-- ===================================================== FEATURED PRODUCTS -->
-<section class="section" style="background:var(--cream-2);padding-top:48px">
+<section class="section" style="background:var(--cream-2);padding-top:40px">
     <div class="container">
         <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none">
             <div>
