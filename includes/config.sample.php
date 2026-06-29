@@ -12,7 +12,7 @@ define('DB_PASS', 'your_db_password');
 
 // ---- Business / WhatsApp ---------------------------------------------------
 // International format, digits only, no plus sign (used in wa.me links).
-define('WHATSAPP_NUMBER', '2348139337952');
+define('WHATSAPP_NUMBER', '250783817585');
 
 // ---- Mobile Money payment details (shown on the payment page) --------------
 define('MOMO_CODE', '000000');            // TODO: replace with real MoMo code

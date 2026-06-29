@@ -37,7 +37,7 @@ require __DIR__ . '/../includes/dash_header.php';
         <?php foreach ($orders as $o): $items = json_decode($o['items_json'], true) ?: []; ?>
         <tr>
             <td><b style="color:var(--green-900)"><?= e($o['reference']) ?></b><br><span class="hint"><?= e(date('d M Y, H:i', strtotime($o['created_at']))) ?></span></td>
-            <td><?= e($o['buyer_name']) ?><?php if ($o['buyer_phone']): ?><br><span class="hint"><?= e($o['buyer_phone']) ?></span><?php endif; ?><?php if ($o['momo_name']): ?><br><span class="hint">MoMo: <?= e($o['momo_name']) ?></span><?php endif; ?></td>
+            <td><?= e($o['buyer_name']) ?><?php if ($o['buyer_phone']): ?><br><span class="hint"><?= e($o['buyer_phone']) ?></span><?php endif; ?><?php if (!empty($o['delivery_address'])): ?><br><span class="hint">Deliver: <?= e($o['delivery_address']) ?></span><?php endif; ?><?php if ($o['momo_name']): ?><br><span class="hint">MoMo: <?= e($o['momo_name']) ?></span><?php endif; ?></td>
             <td><?php foreach ($items as $i): ?><div><?= (int)($i['qty'] ?? 0) ?> x <?= e($i['name'] ?? '') ?></div><?php endforeach; ?></td>
             <td><?= money($o['total']) ?></td>
             <td><?php if ($o['receipt_url']): ?><a class="icon-btn" href="<?= e(asset($o['receipt_url'])) ?>" target="_blank" title="View receipt"><?= icon('image', 'icon', 18) ?></a><?php else: ?>-<?php endif; ?></td>

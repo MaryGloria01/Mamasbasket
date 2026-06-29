@@ -28,7 +28,8 @@ CREATE TABLE IF NOT EXISTS vendors (
     password_hash VARCHAR(255) NOT NULL,
     logo_url      VARCHAR(255) DEFAULT NULL,
     status        ENUM('pending','approved','suspended') NOT NULL DEFAULT 'pending',
-    created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    KEY idx_vendors_status (status)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ---------------------------------------------------------------------------
@@ -57,6 +58,8 @@ CREATE TABLE IF NOT EXISTS products (
     in_stock    TINYINT(1) NOT NULL DEFAULT 1,
     featured    TINYINT(1) NOT NULL DEFAULT 0,
     created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    KEY idx_products_featured (featured, in_stock),
+    KEY idx_products_created (created_at),
     CONSTRAINT fk_products_vendor   FOREIGN KEY (vendor_id)   REFERENCES vendors(id)    ON DELETE CASCADE,
     CONSTRAINT fk_products_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -69,12 +72,15 @@ CREATE TABLE IF NOT EXISTS orders (
     reference     VARCHAR(40) NOT NULL UNIQUE, -- human friendly code e.g. MB-7K3Q
     buyer_name   VARCHAR(160) NOT NULL,
     buyer_phone  VARCHAR(40) DEFAULT NULL,
+    delivery_address VARCHAR(255) DEFAULT NULL, -- where to deliver
     momo_name    VARCHAR(160) DEFAULT NULL,    -- name buyer paid with
     items_json   LONGTEXT NOT NULL,            -- snapshot of cart
     total        DECIMAL(12,2) NOT NULL DEFAULT 0,
     receipt_url  VARCHAR(255) DEFAULT NULL,
     status       ENUM('pending','confirmed','delivered','cancelled') NOT NULL DEFAULT 'pending',
-    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    KEY idx_orders_status (status),
+    KEY idx_orders_created (created_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ---------------------------------------------------------------------------

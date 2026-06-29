@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cart = cart_detailed();
     $name  = trim($_POST['buyer_name'] ?? '');
     $phone = trim($_POST['buyer_phone'] ?? '');
+    $address = trim($_POST['delivery_address'] ?? '');
     $momo  = trim($_POST['momo_name'] ?? '');
 
     if (!csrf_check())                 { $error = 'Your session expired. Please try again.'; }
@@ -55,15 +56,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 try {
                     $stmt = db()->prepare(
-                        "INSERT INTO orders (reference, buyer_name, buyer_phone, momo_name, items_json, total, receipt_url)
-                         VALUES (?, ?, ?, ?, ?, ?, ?)"
+                        "INSERT INTO orders (reference, buyer_name, buyer_phone, delivery_address, momo_name, items_json, total, receipt_url)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
                     );
-                    $stmt->execute([$ref, $name, $phone, $momo, json_encode($itemsSnap), $cart['total'], $receiptUrl]);
+                    $stmt->execute([$ref, $name, $phone, $address, $momo, json_encode($itemsSnap), $cart['total'], $receiptUrl]);
                 } catch (Throwable $e) { /* still proceed to WhatsApp even if logging fails */ }
 
                 // ---- Build the WhatsApp message ----
                 $lines = ["New order " . $ref . " from " . $name];
                 if ($phone) $lines[] = "Phone: " . $phone;
+                if ($address) $lines[] = "Deliver to: " . $address;
                 $lines[] = "";
                 foreach ($cart['lines'] as $l) {
                     $lines[] = $l['qty'] . " x " . $l['name'] . " (" . money($l['subtotal']) . ")";
@@ -104,9 +106,13 @@ require __DIR__ . '/includes/header.php';
                         <label for="buyer_name">Full name</label>
                         <input class="input" type="text" id="buyer_name" name="buyer_name" required value="<?= e($_POST['buyer_name'] ?? '') ?>" placeholder="e.g. Aline Uwase">
                     </div>
-                    <div class="field" style="margin-bottom:0">
+                    <div class="field">
                         <label for="buyer_phone">Phone number <span style="color:var(--muted);font-weight:400">(optional)</span></label>
                         <input class="input" type="tel" id="buyer_phone" name="buyer_phone" value="<?= e($_POST['buyer_phone'] ?? '') ?>" placeholder="e.g. 07XX XXX XXX">
+                    </div>
+                    <div class="field" style="margin-bottom:0">
+                        <label for="delivery_address">Delivery address <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+                        <textarea class="textarea" id="delivery_address" name="delivery_address" style="min-height:70px" placeholder="Neighbourhood, street, landmark for delivery"><?= e($_POST['delivery_address'] ?? '') ?></textarea>
                     </div>
                 </div>
 
