@@ -116,10 +116,8 @@ require __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- section divider -->
-<div class="container">
-    <div class="sec-bar"></div>
-</div>
+<!-- full-width section divider -->
+<div class="sec-bar"></div>
 
 <!-- ===================================================== CATEGORIES -->
 <section class="section" id="categories" style="padding-top:40px">
