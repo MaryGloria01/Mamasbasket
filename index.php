@@ -59,7 +59,7 @@ require __DIR__ . '/includes/header.php';
                 </h1>
                 <p class="hero-sub">Groceries, meals, drinks, medicines and more. Shopped or picked up, then delivered fast across Kigali while you relax.</p>
                 <div class="hero-cta">
-                    <a href="/shop.php" class="btn btn-green btn-lg"><?= icon('basket', 'icon', 20) ?> Start Shopping</a>
+                    <a href="/shop.php" class="btn btn-ghost btn-lg"><?= icon('basket', 'icon', 20) ?> Start Shopping</a>
                     <a href="<?= e(whatsapp_link('Hello Mama\'s Basket, I would like to place an order.')) ?>" class="btn btn-ghost btn-lg" target="_blank" rel="noopener"><?= icon('whatsapp', 'icon', 20) ?> Order on WhatsApp</a>
                 </div>
 
