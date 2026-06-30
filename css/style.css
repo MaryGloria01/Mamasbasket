@@ -677,8 +677,11 @@ table.data tr:hover td { background: var(--cream-2); }
 
 .hero-title { font-size: clamp(2.2rem, 4.8vw, 3.6rem); line-height: 1.08; letter-spacing: -.026em; margin: 22px 0; font-family: var(--font-head); font-weight: 800; }
 /* soft white glow so the headline stays legible where it sits over the photo */
-.hero-photo .hero-title { text-shadow: 0 2px 6px rgba(16,32,22,.22); }
-.hero-photo .hero-sub { text-shadow: 0 1px 3px rgba(16,32,22,.18); }
+/* no shadow on the letters; instead a soft feathered white area sits behind the text */
+.hero-photo .hero-title, .hero-photo .hero-sub { text-shadow: none; }
+.hero-photo .hero-copy { position: relative; }
+.hero-photo .hero-copy::before { content: ""; position: absolute; inset: -20px -34px; z-index: -1;
+    background: rgba(255,255,255,.58); filter: blur(30px); border-radius: 34px; pointer-events: none; }
 .hero-title .line { display: block; }
 .hero-title .hl { display: inline-block; white-space: nowrap; }
 .hero-title .hl-ink { color: var(--ink); }
