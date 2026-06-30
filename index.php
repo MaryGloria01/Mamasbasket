@@ -118,7 +118,7 @@ require __DIR__ . '/includes/header.php';
 
 <!-- section divider -->
 <div class="container">
-    <div class="sec-divider"><span></span><?= icon('leaf', 'icon', 20) ?><span></span></div>
+    <div class="sec-bar"></div>
 </div>
 
 <!-- ===================================================== CATEGORIES -->

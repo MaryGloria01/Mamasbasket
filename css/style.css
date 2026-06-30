@@ -856,6 +856,10 @@ table.data tr:hover td { background: var(--cream-2); }
 .sec-divider span:last-child { background: linear-gradient(90deg, var(--line), transparent); }
 .sec-divider .icon { width: 22px; height: 22px; color: var(--gold); flex: none; }
 
+/* visible rectangle bar divider running across the section width */
+.sec-bar { height: 5px; width: 100%; border-radius: 3px; margin: 6px 0;
+    background: linear-gradient(90deg, var(--green-700), var(--green-500) 50%, var(--gold)); }
+
 /* bolder, more visible divider */
 .sec-divider-bold { gap: 20px; padding: 18px 0; }
 .sec-divider-bold span { height: 2px; border-radius: 2px; }
