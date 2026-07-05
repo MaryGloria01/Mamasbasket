@@ -15,7 +15,7 @@ function save_image(string $field, string $subdir, ?string &$err = null, bool $r
 
     $f = $_FILES[$field];
     if ($f['error'] !== UPLOAD_ERR_OK) { $err = 'Upload failed. Please try again.'; return null; }
-    if ($f['size'] > 6 * 1024 * 1024)  { $err = 'Image is too large (max 6 MB).'; return null; }
+    if ($f['size'] > 2 * 1024 * 1024)  { $err = 'Image is too large (max 2 MB).'; return null; }
 
     $allowed = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
     $finfo = finfo_open(FILEINFO_MIME_TYPE);

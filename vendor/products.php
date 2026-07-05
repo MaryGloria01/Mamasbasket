@@ -139,7 +139,7 @@ require __DIR__ . '/../includes/dash_header.php';
                 <label class="img-drop" id="imgDrop">
                     <span class="ui" style="margin:0 auto 8px;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--green-050);color:var(--green-700)"><?= icon('image', 'icon', 22) ?></span>
                     <b style="font-family:var(--font-head);color:var(--green-900)">Tap to upload</b>
-                    <div class="hint">JPG, PNG or WEBP, up to 6 MB</div>
+                    <div class="hint">JPG, PNG or WEBP, up to 2 MB</div>
                     <input type="file" name="image" accept="image/png,image/jpeg,image/webp" data-preview="imgDrop" required hidden>
                 </label>
             </div>
