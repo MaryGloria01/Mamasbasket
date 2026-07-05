@@ -517,7 +517,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1
 .copy-btn.copied { background: var(--orange); }
 .copy-btn .icon { width: 18px; height: 18px; }
 
-.upload-zone { border: 1.5px dashed var(--line); border-radius: var(--radius); padding: 26px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+.upload-zone { display: block; border: 1.5px dashed var(--line); border-radius: var(--radius); padding: 26px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
 .upload-zone:hover { border-color: var(--green-500); background: var(--green-050); }
 .upload-zone .ui { width: 52px; height: 52px; border-radius: 14px; background: var(--green-050); color: var(--green-700); display: grid; place-items: center; margin: 0 auto 12px; }
 .upload-zone b { font-family: var(--font-head); color: var(--green-900); display: block; }
