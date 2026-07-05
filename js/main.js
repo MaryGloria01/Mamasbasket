@@ -104,8 +104,7 @@
             .then(function (r) { return r.json(); })
             .then(function (data) {
                 if (data && typeof data.count !== "undefined") {
-                    var badge = document.getElementById("cartBadge");
-                    if (badge) badge.textContent = data.count;
+                    updateCartUI(data);
                     flashAdded(btn);
                 }
             })
@@ -117,6 +116,24 @@
         btn.classList.add("added");
         setTimeout(function () { btn.classList.remove("added"); }, 900);
     }
+
+    /* ---- Update cart badge + sticky mini-cart from a cart API response ---- */
+    function updateCartUI(data) {
+        if (!data || typeof data.count === "undefined") return;
+        var badge = document.getElementById("cartBadge");
+        if (badge) badge.textContent = data.count;
+
+        var fab = document.getElementById("cartFab");
+        if (fab) {
+            var count = document.getElementById("cartFabCount");
+            var total = document.getElementById("cartFabTotal");
+            if (count) count.textContent = data.count + (data.count === 1 ? " item in cart" : " items in cart");
+            if (total && data.total_label) total.textContent = data.total_label;
+            if (data.count > 0) { fab.classList.add("show"); }
+            else { fab.classList.remove("show"); }
+        }
+    }
+    window.mbUpdateCart = updateCartUI;
 
     /* ---- Scroll spy: highlight nav links for in-page sections (Why Us, Reviews) ---- */
     var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));

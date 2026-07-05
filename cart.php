@@ -3,6 +3,7 @@ require_once __DIR__ . '/includes/functions.php';
 
 $pageTitle = "Your Basket | Mama's Basket";
 $active = '';
+$hideCartFab = true;
 $cart = ['lines' => [], 'total' => 0];
 try { $cart = cart_detailed(); } catch (Throwable $e) {}
 

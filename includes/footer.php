@@ -49,6 +49,20 @@
     <?= icon('whatsapp', 'icon', 28) ?>
 </a>
 
+<?php if (empty($hideCartFab)):
+    $fabCount = cart_count();
+    $fabTotal = $fabCount ? cart_detailed()['total'] : 0;
+?>
+<div class="cart-fab<?= $fabCount ? ' show' : '' ?>" id="cartFab">
+    <span class="cart-fab-ico"><?= icon('cart', 'icon', 20) ?></span>
+    <span class="cart-fab-info">
+        <b id="cartFabCount"><?= $fabCount ?> <?= $fabCount === 1 ? 'item' : 'items' ?> in cart</b>
+        <span>Total: <strong id="cartFabTotal"><?= money($fabTotal) ?></strong></span>
+    </span>
+    <a href="/cart.php" class="cart-fab-btn">View Cart <?= icon('arrow', 'icon', 16) ?></a>
+</div>
+<?php endif; ?>
+
 <script src="/js/main.js" defer></script>
 <?php if (!empty($pageScripts)) foreach ($pageScripts as $s): ?>
 <script src="<?= e($s) ?>" defer></script>
