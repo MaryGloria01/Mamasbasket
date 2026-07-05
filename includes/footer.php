@@ -64,6 +64,7 @@
 <?php endif; ?>
 
 <script src="/js/main.js" defer></script>
+<script src="/js/password-toggle.js" defer></script>
 <?php if (!empty($pageScripts)) foreach ($pageScripts as $s): ?>
 <script src="<?= e($s) ?>" defer></script>
 <?php endforeach; ?>
